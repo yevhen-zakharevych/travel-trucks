@@ -7,4 +7,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --tt-color-main: #101828;
+  --tt-color-text: #475467;
+  --tt-color-gray: #6c717b;
+  --tt-color-button: #e44848;
+  --tt-color-button-hover: #d84343;
+  --tt-color-rating: #ffc531;
+  --tt-color-gray-light: #dadde1;
+  --tt-color-badges: #f2f4f7;
+  --tt-color-inputs: #f7f7f7;
+  --tt-color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1292px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }

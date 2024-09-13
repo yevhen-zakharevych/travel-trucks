@@ -1,7 +1,6 @@
 # TravelTrucks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
+- [live-page](https://travel-trucks-liard.vercel.app/)
 
 ## Expanding the ESLint configuration
 
