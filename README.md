@@ -2,7 +2,11 @@
 
 - [live-page](https://travel-trucks-liard.vercel.app/)
 
-## Expanding the ESLint configuration
+- Run project:
+
+```
+npm run dev
+```
 
 If you are developing a production application, we recommend updating the
 configuration to enable type aware lint rules:
