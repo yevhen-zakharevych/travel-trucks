@@ -1,0 +1,11 @@
+.wrapper {
+  flex-grow: 1;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100% - 424px);
+}
+
+.loader {
+  align-self: center;
+}

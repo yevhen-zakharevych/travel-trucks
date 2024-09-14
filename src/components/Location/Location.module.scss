@@ -1,0 +1,39 @@
+.wrapper {
+  color: var(--tt-color-main);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--tt-color-gray);
+}
+
+.formControl {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  position: relative;
+  border-radius: 12px;
+  background-color: var(--tt-color-inputs);
+
+  svg {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.input {
+  margin-left: 48px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  outline: none;
+  padding-right: 20px;
+}
