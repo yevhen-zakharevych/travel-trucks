@@ -4,8 +4,16 @@ import { Camper } from '../../types';
 import Badge from '../../ui/Badge/Badge';
 import Icon from '../../ui/Icon/Icon';
 import style from './Card.module.scss';
+import { useAppDispatch } from '../../hooks';
+import { changeFavorites } from '../../redux/favoritesSlice';
 
-function Card({ camper }: { camper: Camper }) {
+function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
+  const dispatch = useAppDispatch();
+
+  const onFavoriteClick = () => {
+    dispatch(changeFavorites(camper.id));
+  };
+
   return (
     <div className={style.card}>
       <div className={style.image}>
@@ -16,7 +24,14 @@ function Card({ camper }: { camper: Camper }) {
         <header className={style.header}>
           <h3 className={style.title}>{camper.name}</h3>
           <p className={style.price}> €{camper.price}</p>
-          <button className={style.buttonFavorite}>
+          <button
+            className={
+              (camper.isFavorite ? style.active : '') +
+              ' ' +
+              style.buttonFavorite
+            }
+            onClick={onFavoriteClick}
+          >
             <Icon id="heart" size="24" />
           </button>
         </header>

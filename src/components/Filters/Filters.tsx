@@ -16,10 +16,10 @@ function Filters() {
   };
 
   const onFormFilterChanged = (form: Form) => {
-    if (filters.form.includes(form)) {
-      dispatch(changeFilter({ form: filters.form.filter(f => f !== form) }));
+    if (filters.form === form) {
+      dispatch(changeFilter({ form: null }));
     } else {
-      dispatch(changeFilter({ form: [...filters.form, form] }));
+      dispatch(changeFilter({ form }));
     }
   };
 
@@ -76,19 +76,19 @@ function Filters() {
         <Filter
           icon="van"
           text="Van"
-          active={filters.form.includes(Form.PanelTruck)}
+          active={filters.form === Form.PanelTruck}
           onFilter={() => onFormFilterChanged(Form.PanelTruck)}
         />
         <Filter
           icon="fully-integrated"
           text="Fully Integrated"
-          active={filters.form.includes(Form.FullyIntegrated)}
+          active={filters.form === Form.FullyIntegrated}
           onFilter={() => onFormFilterChanged(Form.FullyIntegrated)}
         />
         <Filter
           icon="alcove"
           text="Alcove"
-          active={filters.form.includes(Form.Alcove)}
+          active={filters.form === Form.Alcove}
           onFilter={() => onFormFilterChanged(Form.Alcove)}
         />
       </div>

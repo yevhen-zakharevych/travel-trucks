@@ -9,7 +9,7 @@ interface FiltersState {
     kitchen: boolean;
     TV: boolean;
     automatic: boolean;
-    form: Form[];
+    form: Form | null;
   };
   location: string;
 }
@@ -21,7 +21,7 @@ const initialState: FiltersState = {
     kitchen: false,
     TV: false,
     automatic: false,
-    form: [],
+    form: null,
   },
   location: '',
 };

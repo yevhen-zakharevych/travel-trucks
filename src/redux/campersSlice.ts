@@ -3,6 +3,7 @@ import { fetchCampers } from './campersOps';
 import { RootState } from './store';
 import { Camper, Transmission } from '../types';
 import { selectFilters, selectLocation } from './filtersSlice';
+import { selectFavorites } from './favoritesSlice';
 
 interface CampersState {
   items: Camper[];
@@ -61,9 +62,14 @@ export const selectCampersLength = (state: RootState) =>
   state.campers.items.length;
 
 export const selectFilteredCampers = createSelector(
-  [selectCampers, selectFilters, selectLocation],
-  (campers, filter, location) => {
-    let filteredCampers = [...campers];
+  [selectCampers, selectFilters, selectLocation, selectFavorites],
+  (campers, filter, location, favorites) => {
+    let filteredCampers = campers.map(camper => {
+      return {
+        ...camper,
+        isFavorite: favorites.includes(camper.id),
+      };
+    });
 
     if (filter.AC) {
       filteredCampers = filteredCampers.filter(camper => camper.AC);
@@ -93,9 +99,9 @@ export const selectFilteredCampers = createSelector(
       );
     }
 
-    if (filter.form.length > 0) {
-      filteredCampers = filteredCampers.filter(camper =>
-        filter.form.includes(camper.form)
+    if (filter.form) {
+      filteredCampers = filteredCampers.filter(
+        camper => camper.form === filter.form
       );
     }
 
