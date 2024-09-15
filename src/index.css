@@ -65,6 +65,7 @@ p {
   border: none;
   border-radius: 200px;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--tt-color-button-hover);

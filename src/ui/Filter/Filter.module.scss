@@ -1,0 +1,26 @@
+.wrapper {
+  width: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 96px;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--tt-color-gray-light);
+  color: var(--tt-color-main);
+  cursor: pointer;
+
+  &.active {
+    color: var(--tt-color-button);
+    border-color: var(--tt-color-button);
+  }
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: center;
+}
