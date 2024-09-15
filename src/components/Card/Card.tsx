@@ -1,4 +1,5 @@
 import { Camper } from '../../types';
+import Badge from '../../ui/Badge/badge';
 import Icon from '../../ui/Icon/Icon';
 import style from './Card.module.scss';
 
@@ -33,9 +34,16 @@ function Card({ camper }: { camper: Camper }) {
           </div>
         </div>
 
-        {/* <div className={style.description}> */}
         <p className={style.descriptionText}>{camper.description}</p>
-        {/* </div> */}
+
+        <div className={style.badges}>
+          <Badge icon="diagram" text={camper.transmission} />
+          <Badge icon="fuel" text={camper.engine} />
+          {camper.kitchen && <Badge icon="cup-hot" text="Kitchen" />}
+          {camper.AC && <Badge icon="wind" text="AC" />}
+          {camper.TV && <Badge icon="tv" text="TV" />}
+          {camper.bathroom && <Badge icon="droplet" text="Bathroom" />}
+        </div>
       </div>
     </div>
   );

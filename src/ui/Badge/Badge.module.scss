@@ -1,0 +1,18 @@
+.wrapper {
+  height: 48px;
+  padding: 0 18px;
+  gap: 8px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tt-color-badges);
+  color: var(--tt-color-main);
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}

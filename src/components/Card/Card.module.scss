@@ -95,3 +95,9 @@
   color: var(--tt-color-text);
   margin-bottom: 24px;
 }
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
