@@ -7,6 +7,10 @@ import style from './Card.module.scss';
 import { useAppDispatch } from '../../hooks';
 import { changeFavorites } from '../../redux/favoritesSlice';
 
+function formatPrice(price: number) {
+  return price.toFixed(2).replace('.', ',');
+}
+
 function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
   const dispatch = useAppDispatch();
 
@@ -23,7 +27,7 @@ function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
       <div className={style.description}>
         <header className={style.header}>
           <h3 className={style.title}>{camper.name}</h3>
-          <p className={style.price}> €{camper.price}</p>
+          <p className={style.price}> €{formatPrice(camper.price)}</p>
           <button
             className={
               (camper.isFavorite ? style.active : '') +
