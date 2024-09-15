@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+
 import { Camper } from '../../types';
-import Badge from '../../ui/Badge/badge';
+import Badge from '../../ui/Badge/Badge';
 import Icon from '../../ui/Icon/Icon';
 import style from './Card.module.scss';
 
@@ -43,6 +45,15 @@ function Card({ camper }: { camper: Camper }) {
           {camper.AC && <Badge icon="wind" text="AC" />}
           {camper.TV && <Badge icon="tv" text="TV" />}
           {camper.bathroom && <Badge icon="droplet" text="Bathroom" />}
+        </div>
+
+        <div className={style.actions}>
+          <Link
+            className={style.button + ' button'}
+            to={`/details/${camper.id}`}
+          >
+            Show More
+          </Link>
         </div>
       </div>
     </div>

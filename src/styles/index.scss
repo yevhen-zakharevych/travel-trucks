@@ -1,3 +1,5 @@
+@import './helpers.scss';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -48,28 +50,22 @@ p {
 }
 
 .button {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.005em;
-  height: 56px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @extend %button;
+
   background-color: var(--tt-color-button);
   color: var(--tt-color-white);
-  border-radius: 8px;
-  padding-left: 48px;
-  padding-right: 48px;
-  border: none;
-  border-radius: 200px;
-  text-decoration: none;
-  cursor: pointer;
 
   &:hover {
     background-color: var(--tt-color-button-hover);
   }
+}
+
+.button-secondary {
+  @extend %button;
+
+  background-color: transparent;
+  color: var(--tt-color-main);
+  border: 1px solid var(--tt-color-gray-light);
 }
 
 .loader {

@@ -1,39 +1,47 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from './store';
 import { Form } from '../types';
 
 interface FiltersState {
-  AC: boolean;
-  bathroom: boolean;
-  kitchen: boolean;
-  TV: boolean;
-  automatic: boolean;
+  filters: {
+    AC: boolean;
+    bathroom: boolean;
+    kitchen: boolean;
+    TV: boolean;
+    automatic: boolean;
+    form: Form[];
+  };
   location: string;
-  form: Form[];
 }
 
 const initialState: FiltersState = {
-  AC: false,
-  bathroom: false,
-  kitchen: false,
-  TV: false,
-  automatic: false,
+  filters: {
+    AC: false,
+    bathroom: false,
+    kitchen: false,
+    TV: false,
+    automatic: false,
+    form: [],
+  },
   location: '',
-  form: [],
 };
 
 const slice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    changeFilter(state, action: PayloadAction<Partial<FiltersState>>) {
-      Object.assign(state, action.payload);
+    changeFilter(state, action) {
+      state.filters = { ...state.filters, ...action.payload };
+    },
+    changeLocation(state, action) {
+      state.location = action.payload;
     },
   },
 });
 
-export const { changeFilter } = slice.actions;
+export const { changeFilter, changeLocation } = slice.actions;
 
-export const selectFilters = (state: RootState) => state.filters;
+export const selectFilters = (state: RootState) => state.filters.filters;
+export const selectLocation = (state: RootState) => state.filters.location;
 
 export default slice.reducer;

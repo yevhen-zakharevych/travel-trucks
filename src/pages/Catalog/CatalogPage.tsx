@@ -11,7 +11,7 @@ function CatalogPage() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchCampers());
+    dispatch(fetchCampers({ limit: 4, page: 1 }));
   }, [dispatch]);
 
   return (

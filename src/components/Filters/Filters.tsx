@@ -6,6 +6,7 @@ import Location from '../Location/Location';
 import styles from './Filters.module.scss';
 import { useAppDispatch } from '../../hooks';
 import { Form } from '../../types';
+import { fetchCampers } from '../../redux/campersOps';
 
 function Filters() {
   const dispatch = useAppDispatch();
@@ -23,6 +24,10 @@ function Filters() {
   };
 
   const filters = useSelector(selectFilters);
+
+  const onSearchClick = () => {
+    dispatch(fetchCampers());
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -89,7 +94,9 @@ function Filters() {
       </div>
 
       <div className={styles.actions}></div>
-      <button className={styles.button + ' button'}>Search</button>
+      <button className={styles.button + ' button'} onClick={onSearchClick}>
+        Search
+      </button>
     </div>
   );
 }
