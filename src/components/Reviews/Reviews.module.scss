@@ -1,0 +1,30 @@
+.review {
+  margin-bottom: 44px;
+}
+
+.header {
+  display: flex;
+}
+
+.avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tt-color-badges);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--tt-color-button);
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.comment {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--tt-color-text);
+}

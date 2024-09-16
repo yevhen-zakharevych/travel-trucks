@@ -38,13 +38,13 @@ function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
         </header>
 
         <div className={style.contentRow}>
-          <div className={style.review}>
+          <Link className={style.review} to={`/details/${camper.id}/reviews`}>
             <Icon id="star" size="16" />
             <span className={style.rating}>{camper.rating}</span>
             <span className={style.reviews}>
               ({camper.reviews.length} Reviews)
             </span>
-          </div>
+          </Link>
 
           <div className={style.location}>
             <Icon id="map" size="16" />
