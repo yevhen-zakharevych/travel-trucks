@@ -15,7 +15,7 @@ export const getCampers = async (params?: {
   return response.data;
 };
 
-export const getCampersDetails = async (id: string) => {
+export const getCamperDetails = async (id: string) => {
   const response = await axios.get(`${baseUrl}/campers/${id}`);
 
   return response.data;

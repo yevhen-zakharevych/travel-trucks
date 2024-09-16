@@ -6,10 +6,7 @@ import Icon from '../../ui/Icon/Icon';
 import style from './Card.module.scss';
 import { useAppDispatch } from '../../hooks';
 import { changeFavorites } from '../../redux/favoritesSlice';
-
-function formatPrice(price: number) {
-  return price.toFixed(2).replace('.', ',');
-}
+import { formatPrice } from '../../shared';
 
 function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
   const dispatch = useAppDispatch();
@@ -69,7 +66,7 @@ function Card({ camper }: { camper: Camper & { isFavorite: boolean } }) {
         <div className={style.actions}>
           <Link
             className={style.button + ' button'}
-            to={`/details/${camper.id}`}
+            to={`/details/${camper.id}/features`}
           >
             Show More
           </Link>

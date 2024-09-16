@@ -7,6 +7,9 @@ const DetailsPage = lazy(() => import('./pages/Details/DetailsPage'));
 const HomePage = lazy(() => import('./pages/Home/HomePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFound/NotFoundPage'));
 
+const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const Features = lazy(() => import('./components/Features/Features'));
+
 function App() {
   return (
     <>
@@ -14,8 +17,11 @@ function App() {
       <Suspense fallback={<div>Loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />}></Route>
-          <Route path="/details/:id" element={<DetailsPage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/details/:id" element={<DetailsPage />}>
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="features" element={<Features />} />
+          </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

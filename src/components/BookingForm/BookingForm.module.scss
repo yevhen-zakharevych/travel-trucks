@@ -1,0 +1,59 @@
+.wrapper {
+  border: 1px solid var(--tt-color-gray-light);
+  border-radius: 10px;
+  padding: 44px 57px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: var(--tt-color-main);
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: var(--tt-color-gray);
+  margin-bottom: 24px;
+}
+
+.formField {
+  padding: 18px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 12px;
+  background-color: var(--tt-color-inputs);
+  margin-bottom: 14px;
+  position: relative;
+
+  textarea,
+  input {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    outline: none;
+    width: 100%;
+  }
+
+  .error {
+    font-size: 16px;
+    color: var(--tt-color-button);
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.actions {
+  margin-top: 24px;
+  text-align: center;
+}
