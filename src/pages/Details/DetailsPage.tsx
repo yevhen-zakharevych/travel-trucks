@@ -78,7 +78,7 @@ function DetailsPage() {
 
             <div className={style.content}>
               <div className={style.tabContent}>
-                <Outlet />
+                <Outlet context={camper} />
               </div>
 
               <div className={style.bookingForm}>
