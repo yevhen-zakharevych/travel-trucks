@@ -1,3 +1,5 @@
+import icons from '../../assets/sprite.svg';
+
 function Icon({
   id,
   size = '20',
@@ -9,7 +11,7 @@ function Icon({
 }) {
   return (
     <svg height={size} width={size} color={color}>
-      <use href={`/src/assets/sprite.svg#${id}`} />
+      <use href={`${icons}#${id}`} />
     </svg>
   );
 }
